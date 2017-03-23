@@ -566,8 +566,6 @@ class AIn7Member(LoggedClass):
 
     def current_subscription_end_date(self):
 
-        from ain7.adhesions.models import Subscription
-
         if self.current_subscription() is not None:
             return self.current_subscription().end_date
 
@@ -590,8 +588,6 @@ class AIn7Member(LoggedClass):
         return result
 
     def last_subscription_end_date(self):
-
-        from ain7.adhesions.models import Subscription
 
         if self.last_subscription() is not None:
             return self.last_subscription().end_date
