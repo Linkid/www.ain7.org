@@ -24,8 +24,10 @@
 import datetime
 
 from autocomplete_light import shortcuts as autocomplete_light
+from geopy.geocoders import Nominatim
 
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.forms.models import modelform_factory
 from django.http import HttpResponseRedirect
@@ -338,3 +340,22 @@ def office_merge_perform(request, organization_id, office1_id, office2_id):
     office1.merge(office2)
     messages.success(request, message=_('Office successfully merged'))
     return redirect(office.organization)
+
+
+@login_required
+def offices_map(request):
+    """Display a map of offices"""
+    # init the geolocator
+    geolocator = Nominatim()
+
+    # find offices coords
+    offices_loc = dict()
+    offices = Office.objects.filter(line1__isnull=False)
+    for office in offices:
+        location = geolocator.geocode("%s, %s %s, %s" % (office.line1,
+            office.zip_code, office.city, office.country))
+        offices_loc[office] = (str(location.latitude), str(location.longitude))
+
+    return render(request, 'organizations/offices_map.html', {
+        'offices': offices_loc,
+    })

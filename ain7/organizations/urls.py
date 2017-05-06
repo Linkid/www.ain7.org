@@ -94,5 +94,10 @@ urlpatterns = [
         r'^(?P<organization_id>\d+)/offices/(?P<office1_id>\d+)/merge/(?P<office2_id>\d+)/$',
         views.office_merge_perform,
     ),
+    url(
+        r'^map/',
+        views.offices_map,
+        name='offices-map',
+    ),
 
 ]

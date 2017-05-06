@@ -13,6 +13,7 @@ celery[redis]<4.0
 Pillow
 vobject
 pygments
+geopy==1.11.0
 
 # database layer
 MySQL-python

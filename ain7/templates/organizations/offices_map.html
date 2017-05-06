@@ -1,0 +1,48 @@
+{% extends "manage/base.html" %}
+{% load i18n %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.0.5/dist/leaflet.markercluster.js"></script>
+{% endblock %}
+
+{% block title %}{% trans "Organizations map" %}{% endblock %}
+
+{% block breadcrumb %}
+  <li><a href="{% url "organization-index" %}">{% trans "Organizations" %}</a></li>
+  <li><a href="{% url "offices-map" %}">{% trans "Organizations map" %}</a></li>
+{% endblock %}
+
+{% block content-left %}
+  {% trans "Here is the organizations map where alumni are working" %}.<br /><br />
+
+  <div id="mapid" style="width: 100%; height: 400px;"></div>
+  <script>
+    var map = L.map('mapid').setView([29.23, 25.66], 2);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var markers = new L.MarkerClusterGroup({
+      spiderfyOnMaxZoom: false
+    });
+    {% for office, location in offices.items %}
+        var marker_{{ office.id }} = L.marker([{{ location.0 }}, {{ location.1 }}]);
+        marker_{{ office.id }}.bindPopup(
+          "<strong>{{ office.organization.name }}</strong> ({{ office.name }})<br />" +
+          "{% trans 'Current N7 employees' %}: {{ office.current_n7_employees|length }}<br />" +
+          "{% trans 'Details' %}: <a href='{{ office.organization.get_absolute_url }}'>{{ office.organization.name }}</a>"
+        );
+        markers.addLayer(marker_{{ office.id }});
+    {% endfor %}
+
+    map.addLayer(markers);
+  </script>
+{% endblock %}
