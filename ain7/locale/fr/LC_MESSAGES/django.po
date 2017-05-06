@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 21:08+0200\n"
+"POT-Creation-Date: 2017-05-06 18:15+0200\n"
 "PO-Revision-Date: 2010-01-15 22:50+0100\n"
 "Last-Translator: Alexandre Garnier <zigouigoui.garnier@laposte.net>\n"
 "Language-Team: AIn7 French Translators <ain7-devel@lists.ain7.com>\n"
@@ -2037,6 +2037,7 @@ msgid "Mailings"
 msgstr "Mailings"
 
 #: templates/base.html:113 templates/base.html:228
+#: templates/organizations/offices_map.html:19
 msgid "Organizations"
 msgstr "Entreprises"
 
@@ -2616,7 +2617,20 @@ msgstr "Informations générales"
 msgid "Update"
 msgstr "Mise à jour"
 
-#: templates/organizations/organization_details.html:14
+#: templates/organizations/offices_map.html:16
+#: templates/organizations/offices_map.html:20
+msgid "Organizations map"
+msgstr "Carte des entreprises"
+
+#: templates/organizations/offices_map.html:25
+msgid "Here is the organizations map where alumni are working"
+msgstr "Voici la carte des entreprises où travaillent les alumni"
+
+#: templates/organizations/offices_map.html:42
+msgid "Details"
+msgstr "Détails"
+
+#: templates/organizations/organization_details.html:19
 msgid "Size"
 msgstr "Taille"
 
@@ -2652,6 +2666,7 @@ msgid "Job offers"
 msgstr "Offres d'emploi"
 
 #: templates/organizations/organization_details.html:109
+#: templates/organizations/offices_map.html:40
 msgid "Current N7 employees"
 msgstr "Ingénieurs N7 actuellement employés"
 
