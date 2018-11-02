@@ -1,12 +1,12 @@
 Django<1.11
 
-django-allauth
+django-allauth<0.35
 django-autocomplete-light>=2.0,<3.0
 django-crispy-forms
 django-extensions
 django-el-pagination
-django-filter
-django-taggit
+django-filter<2.0
+django-taggit<0.23
 
 celery[redis]<4.0
 
