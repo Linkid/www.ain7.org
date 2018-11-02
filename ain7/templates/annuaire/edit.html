@@ -159,7 +159,12 @@
 
                     <div class="col-md-12">
                         <h2>
-                            <a name="address"></a>Addresse(s)
+                            <a name="address"></a>
+                            {% blocktrans trimmed count counter=person.addresses.count %}
+                              Address
+                            {% plural %}
+                              Addresses
+                            {% endblocktrans %}
                             &nbsp;
                             <a href="{% url "member-address-add" person.pk %}" class="btn btn-primary"><i
                                     class="fa fa-plus"></i> {% trans "Add" %}</a>
@@ -187,7 +192,12 @@
                     <div class="col-md-12">
 
                         <h2>
-                            <a name="email"></a>Courriel(s)
+                            <a name="email"></a>
+                            {% blocktrans trimmed count counter=person.emails.count %}
+                              Email
+                            {% plural %}
+                              Emails
+                            {% endblocktrans %}
                             &nbsp;
                             <a href="{% url "member-email-add" person.pk %}" class="btn btn-primary"><i
                                     class="fa fa-plus"></i> {% trans "Add" %}</a>
@@ -220,7 +230,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
-                            <a name="phone"></a>Téléphone(s)
+                            <a name="phone"></a>
+                            {% blocktrans trimmed count counter=person.phone_numbers.count %}
+                              Phone
+                            {% plural %}
+                              Phones
+                            {% endblocktrans %}
                             &nbsp;
                             <a href="{% url "member-phone-add" person.pk %}" class="btn btn-primary"><i
                                     class="fa fa-plus"></i> {% trans "Add" %}</a>
@@ -249,7 +264,12 @@
 
                     <div class="col-md-12">
                         <h2>
-                            <a name="website"></a>Site(s) Internet
+                            <a name="website"></a>
+                            {% blocktrans trimmed count counter=person.web_sites.count %}
+                              Website
+                            {% plural %}
+                              Websites
+                            {% endblocktrans %}
                             &nbsp;
                             <a href="{% url "member-website-add" person.pk %}" class="btn btn-primary"><i
                                     class="fa fa-plus"></i> {% trans "Add" %}</a>

@@ -5,16 +5,17 @@
 # Alexandre Garnier <zigouigoui.garnier@laposte.net>, 2007-2010
 # Olivier Gauwin <olivier.gauwin@laposte.net>, 2007-2010
 # Lionel Porcheron <lionel@alveonet.org>, 2007-2015
+# François Magimel <francois.magimel@alumni.enseeiht.fr>, 2017-2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-18 23:17+0100\n"
+"POT-Creation-Date: 2018-11-02 19:18+0100\n"
 "PO-Revision-Date: 2010-01-15 22:50+0100\n"
 "Last-Translator: Alexandre Garnier <zigouigoui.garnier@laposte.net>\n"
 "Language-Team: AIn7 French Translators <ain7-devel@lists.ain7.com>\n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -648,10 +649,12 @@ msgstr "adresse ligne 2"
 msgid "is valid"
 msgstr "est valide"
 
-#: annuaire/models.py:1098 templates/annuaire/details.html:126
-#: templates/annuaire/edit.html:172
+#: annuaire/models.py:1114 templates/annuaire/details.html:126
+#: templates/annuaire/edit.html:163 templates/annuaire/edit.html:177
 msgid "Address"
-msgstr "Adresse"
+msgid_plural "Addresses"
+msgstr[0] "Adresse"
+msgstr[1] "Adresses"
 
 #: annuaire/models.py:1115
 msgid "preferred"
@@ -1010,7 +1013,7 @@ msgstr "Description"
 
 #: emploi/models.py:49 templates/emploi/job_details.html:75
 msgid "Experience"
-msgstr "Experience"
+msgstr "Expérience"
 
 #: emploi/models.py:52
 msgid "Contract type"
@@ -2032,9 +2035,27 @@ msgstr "Pas de fonction honorifique"
 msgid "Yes"
 msgstr "Oui"
 
-#: templates/annuaire/edit.html:313
+#: templates/annuaire/edit.html:196
+msgid "Email"
+msgid_plural "Emails"
+msgstr[0] "Courriel"
+msgstr[1] "Courriels"
+
+#: templates/annuaire/edit.html:234
+msgid "Phone"
+msgid_plural "Phones"
+msgstr[0] "Téléphone"
+msgstr[1] "Téléphones"
+
+#: templates/annuaire/edit.html:268
+msgid "Website"
+msgid_plural "Websites"
+msgstr[0] "Site web"
+msgstr[1] "Sites web"
+
+#: templates/annuaire/edit.html:308
 msgid "Experiences"
-msgstr "Experience"
+msgstr "Expériences"
 
 #: templates/annuaire/edit.html:392
 msgid "Publications and patents"

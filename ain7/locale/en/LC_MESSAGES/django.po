@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-18 23:17+0100\n"
+"POT-Creation-Date: 2018-11-02 19:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -619,10 +619,12 @@ msgstr ""
 msgid "is valid"
 msgstr ""
 
-#: annuaire/models.py:1098 templates/annuaire/details.html:126
-#: templates/annuaire/edit.html:172
+#: annuaire/models.py:1114 templates/annuaire/details.html:126
+#: templates/annuaire/edit.html:163 templates/annuaire/edit.html:177
 msgid "Address"
-msgstr ""
+msgid_plural "Addresses"
+msgstr[0] ""
+msgstr[1] ""
 
 #: annuaire/models.py:1115
 msgid "preferred"
@@ -1867,7 +1869,7 @@ msgstr ""
 msgid "Professionnal Address:"
 msgstr ""
 
-#: templates/annuaire/details.html:148 templates/annuaire/edit.html:355
+#: templates/annuaire/details.html:148 templates/annuaire/edit.html:350
 msgid "N7 associative activities"
 msgstr ""
 
@@ -1962,7 +1964,25 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: templates/annuaire/edit.html:313
+#: templates/annuaire/edit.html:196
+msgid "Email"
+msgid_plural "Emails"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/annuaire/edit.html:234
+msgid "Phone"
+msgid_plural "Phones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/annuaire/edit.html:268
+msgid "Website"
+msgid_plural "Websites"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/annuaire/edit.html:308
 msgid "Experiences"
 msgstr ""
 
